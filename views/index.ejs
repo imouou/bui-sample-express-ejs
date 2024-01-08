@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+    <title><%= title %></title>
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="css/bui.css" />
+    <link rel="stylesheet" href="font/bootstrap-icons.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+      
+    <!-- 使用组件: 便于修改跟模块化编译开发 -->
+    <component id="indexcomp" ></component>
+
+  <script src="js/zepto.js"></script>
+  <script src="js/bui.js"></script>
+  <script src="js/global.js"></script>
+  <script >
+    // 组件初始化
+    bui.ready(function(){
+        // 原生事件初始化
+        loader.load({
+            id:"#indexcomp",
+            url:"pages/main/main.html",
+            param: {
+              pagetitle:"<%= title %>"
+            }
+        });
+    });
+  </script>
+
+  </body>
+</html>
